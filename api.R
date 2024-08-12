@@ -10,3 +10,4 @@ req <- request("https://newsapi.org/v2/everything") %>%
 
 resp <- req_perform(req)
 resp_body_json(resp)
+#new cmt
