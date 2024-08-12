@@ -1,13 +1,9 @@
-library(httr2)
-library(usethis)
-req <- request("https://newsapi.org/v2/everything") %>%
-  req_url_query(
-    q = '`"data science"`',
-    from = Sys.Date() - 1,
-    pageSize = 10,
-    apiKey = Sys.getenv("NEWS_API_KEY")
-  )
+library(dplyr)
+library(readr)
+df1 <- data.frame(x = c(1, 1, 2), y = 1:3)
+df2 <- data.frame(x = c(1, 2, 2), z = letters[1:3])
+left_join(df1, df2, by = "x", relationship = "many-to-many")
+path <- tempfile()
+write_csv(df1, path)
+read_csv(path, show_col_types = FALSE)
 
-resp <- req_perform(req)
-resp_body_json(resp)
-#new cmt
