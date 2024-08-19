@@ -21,7 +21,6 @@ jobs:
 
       # Install pandoc
       - uses: r-lib/actions/setup-pandoc@v2
-
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
 
